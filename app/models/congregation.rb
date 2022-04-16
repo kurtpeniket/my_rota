@@ -4,4 +4,7 @@ class Congregation < ApplicationRecord
   has_many :users, through: :user_role_congregations
 
   validates :name, presence: true
+
+  scope :active, -> { where(active: true) }
+
 end
