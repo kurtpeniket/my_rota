@@ -40,6 +40,10 @@ class Admin::CongregationsController < ApplicationController
     @url = "#{request.base_url}/join_congregation/#{@congregation.id}/#{@congregation.token}"
   end
 
+  def delete
+    raise
+  end
+
   def join_congregation
     if params[:token] == @congregation.token
       UserRoleCongregation.find_or_create_by(

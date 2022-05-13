@@ -1,3 +1,28 @@
-<% Congregation.all.each do |cong| %>
-  <%= cong.name %>
-<% end %>
+<div class='container-fluid'>
+  <h1 class='text-center'>Congregations</h1>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Users</th>
+          <th>Active</th>
+          <th width='200'>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Congregation.all.each do |cong| %>
+          <tr>
+            <td><%= cong.name %></td>
+            <td><%= cong.users.count %></td>
+            <td><%= cong.active %></td>
+            <td>
+              <%= link_to 'Edit', edit_admin_congregation_path(cong), class: 'btn btn-outline-info' %> 
+              <%= link_to 'Delete', "/admin/congregation/#{cong.id}", method: :delete, data: {confirm: 'Are you sure you want to delete this congregation?'}, class: 'btn btn-outline-danger', title: "delete" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
