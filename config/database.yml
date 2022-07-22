@@ -84,3 +84,4 @@ production:
   database: my_rota_production
   username: my_rota
   password: <%= ENV['MY_ROTA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
