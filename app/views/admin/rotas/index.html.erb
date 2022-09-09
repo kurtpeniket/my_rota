@@ -1,0 +1,10 @@
+<h1>
+  <% if @rotas.present? %>
+    <% @rotas.each do |rota| %>
+      <%= rota %>
+    <% end %>
+  <% end %>
+
+</h1>
+
+<%= link_to "Create", new_admin_rota_path %>

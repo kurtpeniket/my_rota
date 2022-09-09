@@ -1,6 +1,6 @@
 class CreateRotas < ActiveRecord::Migration[6.1]
   def change
-    create_table :rotas do |t|
+    create_table :rota do |t|
       t.string :month
 
       t.timestamps

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users, except: [:show] do
       resources :roles, only: [:index, :create, :destroy]
     end
+    resources :rotas
   end
 
 end
