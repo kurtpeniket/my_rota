@@ -1,3 +1,5 @@
-<%= form_for :rota do |f| %>
+<%= form_with model: @rota, url: admin_rotas_path(@rota) do |f| %>
   <%= f.file_field :attachment %>
+
+  <%= f.submit %>
 <% end %>

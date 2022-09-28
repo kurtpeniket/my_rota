@@ -9,9 +9,9 @@ class Admin::RotasController < ApplicationController
   end
 
   def create
-    @rota = Rota.new(congregation_params)
+    @rota = Rota.new(rota_params)
     if @rota.save
-      redirect_to rotas_path, notice: 'rota saved'
+      redirect_to admin_rotas_path, notice: 'rota saved'
     else
       render :edit, alert: 'rota was not saved'
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_09_200208) do
+ActiveRecord::Schema.define(version: 2022_09_26_153826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 2022_09_09_200208) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "rota_id"
+    t.string "audio"
+    t.string "video"
+    t.string "attendant"
+    t.string "left_mic"
+    t.string "right_mic"
+    t.string "platform"
+    t.string "notes"
     t.index ["rota_id"], name: "index_meetings_on_rota_id"
   end
 

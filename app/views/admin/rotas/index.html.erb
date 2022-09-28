@@ -1,7 +1,10 @@
 <h1>
   <% if @rotas.present? %>
     <% @rotas.each do |rota| %>
-      <%= rota %>
+      <% if rota.attachment.attached? %>
+        <%= rota.attachment %>
+        <iframe src=<%= "#{url_for(rota.attachment)}#view=fitH" %> width="100%" height="1200"></iframe>
+      <% end %>
     <% end %>
   <% end %>
 
